@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'PV_VERSION', '2.1.0' );
+define( 'PV_VERSION', '2.2.0' );
 define( 'PV_URI', get_template_directory_uri() );
 
 require_once get_template_directory() . '/inc/sponsoren.php';

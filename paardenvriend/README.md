@@ -1,4 +1,4 @@
-# Thema HSV De Paardenvriend – v2.0.0
+# Thema HSV De Paardenvriend – v2.2.0
 
 Bootstrap 5-thema in de stijl van de mockup (Lora + PT Sans, lokaal gehost). Bevat de **sponsoren**. De agenda, startlijsten en uitslagen komen uit de plugin **HSV Wedstrijden** (eerst installeren).
 
@@ -17,10 +17,11 @@ Bootstrap 5-thema in de stijl van de mockup (Lora + PT Sans, lokaal gehost). Bev
 ## Sponsoren
 
 - **Sponsoren → Nieuwe sponsor**: naam, website, logo (rechts), categorie.
-- Categorieën: Hoofdsponsor, Stersponsor, Sponsor. Uit te breiden; per categorie een *volgorde* en *grootte* van de logo's.
-- Volgorde binnen een categorie: *Volgorde* bij Pagina-attributen.
-- Getoond op: homepage (gekozen categorieën), balk boven de footer op andere pagina's, en de pagina **Sponsoren** (alles, per categorie).
-- Shortcode: `[sponsoren]`, `[sponsoren categorie="hoofdsponsor,stersponsor" koppen="nee"]`.
+- Alle logo's staan in een **vierkant (1:1) vak**; een vierkant of liggend logo met weinig witruimte werkt het best.
+- Categorieën: Hoofdsponsor, Stersponsor, Sponsor. Uit te breiden; per categorie een **volgorde** (pagina Sponsoren) en een **gewicht** (1–10).
+- **Sponsorbalk** (homepage en boven de footer): bij elk bezoek een willekeurige selectie van *n* logo's (Customizer → Homepage, standaard 6). Het gewicht bepaalt hoe vaak een categorie voorkomt; standaard Hoofdsponsor 5, Stersponsor 3, Sponsor 1. De selectie gebeurt in de browser, dus ook met paginacache wisselt hij per bezoek.
+- De pagina **Sponsoren** toont iedereen, per categorie.
+- Shortcode: `[sponsoren]` (alles), `[sponsoren categorie="hoofdsponsor,stersponsor"]`, `[sponsoren aantal="6"]` (willekeurige, gewogen selectie).
 
 ## Overig
 

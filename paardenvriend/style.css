@@ -4,7 +4,7 @@ Theme URI:    https://hsvdepaardenvriend.nl
 Author:       Bongersonline
 Author URI:   https://bongersonline.nl
 Description:  Bootstrap 5-thema voor HSV De Paardenvriend (Reuver) met sponsoren. Agenda, startlijsten en uitslagen komen uit de plugin "HSV Wedstrijden".
-Version:      2.1.0
+Version:      2.2.0
 Requires at least: 6.4
 Requires PHP: 7.4
 Text Domain:  paardenvriend
@@ -105,24 +105,25 @@ h1, h2, h3, h4 { font-family: var(--pv-serif); font-weight: 700; color: var(--pv
 .pv-latest .hsv-latest { margin-bottom: 14px; }
 .pv-home-content { padding-bottom: 40px; }
 
-/* Sponsoren */
+/* Sponsoren: alle logo's in een vierkant (1:1) vak */
 .pv-sponsor-band { background: var(--pv-cream); padding: 48px 0; }
 .pv-sponsor-band h2 { font-size: 28px; margin: 0 0 8px; }
 .pv-sponsor-band p { color: #555; }
 .pv-sponsor-band.is-compact { padding: 36px 0; }
 .pv-band-title { font-family: var(--pv-sans) !important; font-size: 13px !important; letter-spacing: .12em; text-transform: uppercase; color: #5b6b3a !important; text-align: center; margin-bottom: 20px !important; }
-.pv-sponsor-group + .pv-sponsor-group { margin-top: 28px; }
+.pv-sponsor-group + .pv-sponsor-group { margin-top: 32px; }
 .pv-sponsor-head { font-size: 22px; margin: 0 0 14px; }
-.pv-sponsor-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
-.pv-sponsor-group.is-middel .pv-sponsor-grid { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
-.pv-sponsor-group.is-groot .pv-sponsor-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-.pv-sponsor { display: flex; align-items: center; justify-content: center; height: 92px; padding: 12px 16px; background: #fff; border-radius: 6px; border: 1px solid var(--pv-border); text-decoration: none !important; transition: box-shadow .15s; }
-.pv-sponsor-group.is-middel .pv-sponsor { height: 110px; }
-.pv-sponsor-group.is-groot .pv-sponsor { height: 140px; }
-a.pv-sponsor:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); }
-.pv-sponsor img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
-.pv-sponsor-name { font-family: var(--pv-sans); font-weight: 700; color: var(--pv-text); text-align: center; }
-.pv-sponsor-band.is-compact .pv-sponsor-group.is-groot .pv-sponsor { height: 110px; }
+.pv-sponsor-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.pv-sponsor { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 1 / 1; padding: 14%; background: #fff; border-radius: 6px; border: 1px solid var(--pv-border); text-decoration: none !important; transition: box-shadow .15s, transform .15s; overflow: hidden; }
+.pv-sponsor[hidden] { display: none; }
+a.pv-sponsor:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); transform: translateY(-2px); }
+.pv-sponsor img { width: 100%; height: 100%; object-fit: contain; }
+.pv-sponsor-name { font-family: var(--pv-sans); font-weight: 700; color: var(--pv-text); text-align: center; line-height: 1.25; }
+/* Sponsorbalk: vaste rij vierkanten */
+.pv-sponsors.is-random .pv-sponsor-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.pv-sponsor-band.is-compact .pv-sponsors { max-width: 980px; margin: 0 auto; }
+@media (max-width: 991.98px) { .pv-sponsors.is-random .pv-sponsor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } }
+@media (max-width: 575.98px) { .pv-sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* Pagina's */
 .pv-page { padding-top: 44px; padding-bottom: 64px; }
@@ -151,11 +152,3 @@ a.pv-sponsor:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); }
 
 /* Toegankelijkheid */
 :focus-visible { outline: 3px solid var(--pv-lime); outline-offset: 2px; }
-
-/* Sponsorbalk: alle logo's in één raster, hoofdsponsoren breder */
-.pv-sponsor-band .pv-sponsors { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-.pv-sponsor-band .pv-sponsor-group, .pv-sponsor-band .pv-sponsor-grid { display: contents; }
-.pv-sponsor-band .pv-sponsor-group .pv-sponsor { height: 92px; }
-.pv-sponsor-band .pv-sponsor-group.is-groot .pv-sponsor { grid-column: span 2; }
-.pv-sponsor-band.is-compact .pv-sponsors { max-width: 980px; margin: 0 auto; }
-@media (max-width: 575.98px) { .pv-sponsor-band .pv-sponsors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

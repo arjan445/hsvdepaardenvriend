@@ -59,10 +59,18 @@ add_action( 'customize_register', function ( $wp_customize ) {
 		'section'     => 'pv_home',
 		'mime_type'   => 'image',
 	) ) );
-	$wp_customize->add_setting( 'pv_home_sponsors', array( 'default' => 'hoofdsponsor,stersponsor', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_setting( 'pv_sponsor_count', array( 'default' => 6, 'sanitize_callback' => 'absint' ) );
+	$wp_customize->add_control( 'pv_sponsor_count', array(
+		'label'       => 'Aantal sponsorlogo\'s in de sponsorbalk',
+		'description' => 'Bij elk bezoek een willekeurige selectie; hoofd- en stersponsoren komen vaker voor (gewicht per categorie).',
+		'section'     => 'pv_home',
+		'type'        => 'number',
+		'input_attrs' => array( 'min' => 1, 'max' => 24 ),
+	) );
+	$wp_customize->add_setting( 'pv_home_sponsors', array( 'default' => '', 'sanitize_callback' => 'sanitize_text_field' ) );
 	$wp_customize->add_control( 'pv_home_sponsors', array(
-		'label'       => 'Sponsorcategorieën op de homepage',
-		'description' => 'Slugs, met komma\'s. Leeg = alle sponsoren.',
+		'label'       => 'Alleen deze sponsorcategorieën in de balk (optioneel)',
+		'description' => 'Slugs, met komma\'s, bijv. hoofdsponsor,stersponsor. Leeg = alle sponsoren.',
 		'section'     => 'pv_home',
 		'type'        => 'text',
 	) );

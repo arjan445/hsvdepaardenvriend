@@ -96,7 +96,7 @@ if ( 'page' === get_option( 'show_on_front' ) ) :
 endif;
 ?>
 
-<?php $pv_sp = pv_sponsors_html( array( 'categorie' => get_theme_mod( 'pv_home_sponsors', 'hoofdsponsor,stersponsor' ), 'koppen' => false ) ); ?>
+<?php $pv_sp = pv_sponsor_band_html(); ?>
 <?php if ( $pv_sp ) : ?>
 	<section class="pv-sponsor-band">
 		<div class="container">
