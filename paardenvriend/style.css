@@ -1,0 +1,161 @@
+/*
+Theme Name:   HSV De Paardenvriend
+Theme URI:    https://hsvdepaardenvriend.nl
+Author:       Bongersonline
+Author URI:   https://bongersonline.nl
+Description:  Bootstrap 5-thema voor HSV De Paardenvriend (Reuver) met sponsoren. Agenda, startlijsten en uitslagen komen uit de plugin "HSV Wedstrijden".
+Version:      2.0.0
+Requires at least: 6.4
+Requires PHP: 7.4
+Text Domain:  paardenvriend
+License:      GPL-2.0-or-later
+*/
+
+:root {
+	--pv-green: #4d6824;
+	--pv-green-dark: #33461a;
+	--pv-lime: #a0ce4e;
+	--pv-sage: #b2bf79;
+	--pv-sage-dark: #849b6f;
+	--pv-taupe: #9b9074;
+	--pv-cream: #fefccb;
+	--pv-footer: #56634f;
+	--pv-text: #333;
+	--pv-muted: #666;
+	--pv-border: #ececec;
+	--pv-soft: #f6f6f6;
+	--pv-serif: 'Lora', Georgia, serif;
+	--pv-sans: 'PT Sans', 'Segoe UI', Arial, sans-serif;
+	--bs-body-font-family: var(--pv-serif);
+	--bs-body-color: var(--pv-text);
+	--bs-link-color: var(--pv-green);
+	--bs-link-color-rgb: 77, 104, 36;
+	--bs-link-hover-color: var(--pv-green-dark);
+	--bs-link-hover-color-rgb: 51, 70, 26;
+}
+
+body { font-family: var(--pv-serif); color: var(--pv-text); font-size: 17px; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3, h4 { font-family: var(--pv-serif); font-weight: 700; color: var(--pv-text); }
+.pv-muted { color: var(--pv-muted); }
+.pv-link-strong { font-family: var(--pv-sans); font-weight: 700; }
+.pv-skip { position: absolute; left: 12px; top: 12px; z-index: 2000; background: #fff; padding: 8px 12px; }
+
+/* Plugin HSV Wedstrijden in de stijl van het thema */
+.hsv { --hsv-primary: var(--pv-green); --hsv-primary-dark: var(--pv-green-dark); --hsv-accent: var(--pv-lime); --hsv-text: var(--pv-text); --hsv-muted: var(--pv-muted); --hsv-border: var(--pv-border); --hsv-soft: var(--pv-soft); --hsv-font-ui: var(--pv-sans); --hsv-font-head: var(--pv-serif); --hsv-wrap: 1320px; }
+.hsv .hsv-wrap { padding-left: calc(var(--bs-gutter-x, 1.5rem) * .5); padding-right: calc(var(--bs-gutter-x, 1.5rem) * .5); }
+
+/* Knoppen */
+.pv-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border-radius: 4px; border: 1px solid var(--pv-green); background: var(--pv-green); color: #fff; font-family: var(--pv-sans); font-weight: 700; font-size: 16px; text-decoration: none !important; }
+.pv-btn:hover { background: var(--pv-green-dark); color: #fff; }
+.pv-btn.is-outline { background: #fff; color: var(--pv-green); }
+.pv-btn.is-lime { background: var(--pv-lime); border-color: var(--pv-lime); color: #1d2a12; }
+.pv-btn.is-lime:hover { background: #8dbb3c; border-color: #8dbb3c; color: #1d2a12; }
+.pv-btn.is-outline-light { background: transparent; border-color: #fff; color: #fff; }
+.pv-btn.is-outline-light:hover { background: rgba(255,255,255,.12); }
+
+/* Mededeling */
+.pv-notice { background: var(--pv-green); color: #fff; text-align: center; font-family: var(--pv-sans); font-weight: 700; font-size: 15px; padding: 9px 0; }
+.pv-notice a { color: #fff; }
+
+/* Header */
+.pv-header { background: #fff; border-bottom: 1px solid var(--pv-border); position: sticky; top: 0; z-index: 1030; }
+.admin-bar .pv-header { top: 32px; }
+@media (max-width: 782px) { .admin-bar .pv-header { top: 46px; } }
+.pv-header .navbar { padding: 12px 0; }
+.pv-logo { height: 72px; width: auto; display: block; }
+.pv-header .nav-link { font-size: 15px; color: var(--pv-text); padding: 8px 16px !important; }
+.pv-header .nav-link:hover, .pv-header .nav-link.active { color: var(--pv-green); }
+.pv-header .nav-link.active { font-weight: 700; box-shadow: inset 0 -2px 0 var(--pv-lime); }
+.pv-header .dropdown-menu { border-radius: 4px; border-color: var(--pv-border); font-size: 15px; }
+.pv-header .dropdown-item.active, .pv-header .dropdown-item:active { background: var(--pv-green); }
+.navbar-toggler { width: 44px; height: 44px; border: 1px solid #ddd; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; color: var(--pv-text); }
+.navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(160,206,78,.5); }
+@media (max-width: 991.98px) {
+	.pv-logo { height: 54px; }
+	.pv-header .navbar-nav { padding: 8px 0 12px; }
+	.pv-header .nav-link { padding: 12px 4px !important; border-bottom: 1px solid var(--pv-border); }
+}
+
+/* Hero */
+.pv-hero { position: relative; background: #1d2a12; color: #fff; overflow: hidden; }
+.pv-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; opacity: .55; }
+.pv-hero-inner { position: relative; padding: 96px 0; min-height: 420px; display: flex; align-items: center; }
+.pv-hero-inner .container { width: 100%; }
+.pv-kicker { font-family: var(--pv-sans); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: #d9ecb3; margin: 0 0 10px; }
+.pv-kicker-dark { font-family: var(--pv-sans); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #5b6b3a; margin: 0 0 6px; }
+.pv-hero h1 { color: #fff; font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.1; margin: 0 0 14px; max-width: 680px; }
+.pv-hero-text { font-size: 18px; line-height: 1.6; max-width: 560px; color: #f1f1ea; margin: 0 0 26px; }
+.pv-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 575.98px) { .pv-hero-inner { padding: 56px 0; min-height: 320px; } .pv-hero-text { font-size: 16px; } }
+
+/* Homepage */
+.pv-home-main { padding-top: 56px; padding-bottom: 40px; }
+.pv-section-head { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.pv-section-head h2 { font-size: clamp(1.7rem, 3vw, 2.25rem); margin: 0; }
+.pv-season { margin: 40px 0 0; }
+.pv-season img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--pv-border); }
+.pv-box { background: var(--pv-soft); border-left: 5px solid var(--pv-lime); padding: 22px 24px; font-family: var(--pv-sans); scroll-margin-top: 120px; }
+.pv-box h2 { font-size: 22px; margin: 0 0 14px; }
+.pv-box ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15px; line-height: 1.45; color: #555; }
+.pv-box strong { color: var(--pv-text); }
+.pv-latest { margin-top: 32px; }
+.pv-latest h2 { font-size: 22px; margin: 0 0 14px; }
+.pv-latest .hsv-latest { margin-bottom: 14px; }
+.pv-home-content { padding-bottom: 40px; }
+
+/* Sponsoren */
+.pv-sponsor-band { background: var(--pv-cream); padding: 48px 0; }
+.pv-sponsor-band h2 { font-size: 28px; margin: 0 0 8px; }
+.pv-sponsor-band p { color: #555; }
+.pv-sponsor-band.is-compact { padding: 36px 0; }
+.pv-band-title { font-family: var(--pv-sans) !important; font-size: 13px !important; letter-spacing: .12em; text-transform: uppercase; color: #5b6b3a !important; text-align: center; margin-bottom: 20px !important; }
+.pv-sponsor-group + .pv-sponsor-group { margin-top: 28px; }
+.pv-sponsor-head { font-size: 22px; margin: 0 0 14px; }
+.pv-sponsor-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+.pv-sponsor-group.is-middel .pv-sponsor-grid { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.pv-sponsor-group.is-groot .pv-sponsor-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.pv-sponsor { display: flex; align-items: center; justify-content: center; height: 92px; padding: 12px 16px; background: #fff; border-radius: 6px; border: 1px solid var(--pv-border); text-decoration: none !important; transition: box-shadow .15s; }
+.pv-sponsor-group.is-middel .pv-sponsor { height: 110px; }
+.pv-sponsor-group.is-groot .pv-sponsor { height: 140px; }
+a.pv-sponsor:hover { box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+.pv-sponsor img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.pv-sponsor-name { font-family: var(--pv-sans); font-weight: 700; color: var(--pv-text); text-align: center; }
+.pv-sponsor-band.is-compact .pv-sponsor-group.is-groot .pv-sponsor { height: 110px; }
+
+/* Pagina's */
+.pv-page { padding-top: 44px; padding-bottom: 64px; }
+.pv-page-head { margin-bottom: 24px; }
+.pv-page-head h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin: 0; }
+.pv-content { max-width: 820px; line-height: 1.75; }
+.pv-content > .pv-sponsors, .pv-page > .pv-sponsors { margin-top: 32px; }
+.pv-featured img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; }
+.entry-content img { max-width: 100%; height: auto; }
+.entry-content table { width: 100%; border-collapse: collapse; font-family: var(--pv-sans); }
+.entry-content th, .entry-content td { border-bottom: 1px solid var(--pv-border); padding: 8px; }
+.is-style-kader { background: var(--pv-soft); border-left: 5px solid var(--pv-lime); padding: 18px 22px; }
+.pv-posts { display: flex; flex-direction: column; gap: 28px; max-width: 820px; }
+.pv-post h2 { font-size: 24px; margin: 0 0 6px; }
+.pv-post h2 a { color: var(--pv-text); }
+.pv-404-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 24px; }
+.pv-contact { list-style: none; padding: 0; }
+.pv-contact li { margin-bottom: 6px; }
+
+/* Footer */
+.pv-footer { background: var(--pv-footer); color: #eef0e8; padding: 44px 0 24px; font-size: 15px; line-height: 1.7; }
+.pv-footer a { color: #fff; }
+.pv-footer ul { list-style: none; margin: 0; padding: 0; }
+.pv-footer-brand { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.pv-footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 28px; padding-top: 14px; border-top: 1px solid #6e7b66; font-family: var(--pv-sans); font-size: 13px; color: #dfe3d8; }
+
+/* Toegankelijkheid */
+:focus-visible { outline: 3px solid var(--pv-lime); outline-offset: 2px; }
+
+/* Sponsorbalk: alle logo's in één raster, hoofdsponsoren breder */
+.pv-sponsor-band .pv-sponsors { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.pv-sponsor-band .pv-sponsor-group, .pv-sponsor-band .pv-sponsor-grid { display: contents; }
+.pv-sponsor-band .pv-sponsor-group .pv-sponsor { height: 92px; }
+.pv-sponsor-band .pv-sponsor-group.is-groot .pv-sponsor { grid-column: span 2; }
+.pv-sponsor-band.is-compact .pv-sponsors { max-width: 980px; margin: 0 auto; }
+@media (max-width: 575.98px) { .pv-sponsor-band .pv-sponsors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
