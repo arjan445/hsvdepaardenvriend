@@ -10,7 +10,7 @@ get_header();
 $hero_id = absint( get_theme_mod( 'pv_hero_image' ) );
 $season  = absint( get_theme_mod( 'pv_season_image' ) );
 $signup  = (string) get_theme_mod( 'pv_signup', pv_default_signup_html() );
-$events  = pv_has_plugin() ? hsv_get_wedstrijden( array( 'limit' => 4 ) ) : array();
+$events  = pv_has_plugin() ? hsv_get_wedstrijden( array( 'limit' => 4, 'only_wedstrijden' => true ) ) : array();
 ?>
 
 <section class="pv-hero<?php echo $hero_id ? ' has-image' : ''; ?>">
